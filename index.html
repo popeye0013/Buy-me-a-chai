@@ -6,58 +6,57 @@
 <title>Buy me a chai</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 </head>
 <body>
+<main class="page">
 
-<header class="profile">
-  <div class="wrap">
-    <img class="mark" id="mark" src="avatar.jpg" alt="Akash">
+  <header class="profile">
+    <img class="avatar" src="avatar.jpg" alt="Akash">
     <h1>Akash :)</h1>
     <p class="role">Android Developer</p>
-    <p class="lede">I make things I wish already existed. If one of them helped you, a cup of chai keeps the next one coming.</p>
-  </div>
-</header>
+    <p class="bio">I make things I wish already existed. If one of them helped you, a cup of chai keeps the next one coming.</p>
+  </header>
 
-<main class="wrap">
-  <section class="panel" aria-labelledby="donate-h">
+  <section class="card" aria-labelledby="donate-h">
     <h2 id="donate-h">Buy me a chai</h2>
 
     <div class="presets" id="presets" role="group" aria-label="Preset amounts"></div>
 
-    <label for="amt">Amount (₹)</label>
-    <input id="amt" type="number" min="1" step="1" inputmode="numeric">
+    <div class="field">
+      <input id="amt" type="number" min="10" step="1" inputmode="numeric" placeholder=" ">
+      <label for="amt">Amount (₹)</label>
+    </div>
+    <div class="field">
+      <input id="donor" maxlength="40" placeholder=" " autocomplete="name">
+      <label for="donor">Your name (optional)</label>
+    </div>
+    <div class="field">
+      <textarea id="msg" rows="2" maxlength="80" placeholder=" "></textarea>
+      <label for="msg">Note (optional)</label>
+    </div>
+    <p class="warn" id="warn" hidden>Enter at least ₹10 to continue.</p>
 
-    <label for="donor">Your name (optional)</label>
-    <input id="donor" maxlength="40" placeholder="Anonymous" autocomplete="name">
-
-    <label for="msg">Note (optional)</label>
-    <textarea id="msg" rows="2" maxlength="80" placeholder="Say hi, or tell me what helped"></textarea>
-
-    <div class="qr"><div class="qrbox" id="qr">Loading code…</div></div>
+    <div class="qr-wrap"><div class="qr" id="qr">Loading code…</div></div>
     <p class="hint">Scan with any UPI app, or tap Pay on your phone.</p>
 
-    <a class="btn" id="pay" href="#">Pay with UPI</a>
-    <button class="btn ghost" id="copy" type="button">Copy UPI ID</button>
+    <a class="btn filled" id="pay" href="#">Pay with UPI</a>
+    <button class="btn tonal" id="copy" type="button">Copy UPI ID</button>
     <p class="hint">UPI ID: <span id="upi-id"></span></p>
-    <p class="hint" id="warn" hidden>Enter at least ₹1 to continue.</p>
   </section>
 
-  <section class="how" aria-labelledby="how-h">
+  <section class="card" aria-labelledby="how-h">
     <h2 id="how-h">How it works</h2>
-    <ul class="steps">
-      <li><strong>Choose an amount</strong>Any amount from ₹1 works. The presets are just a starting point.</li>
-      <li><strong>Pay with UPI</strong>Tap the button on your phone, or scan the code from another device.</li>
-      <li><strong>All done</strong>The money lands in my UPI account directly. No platform sits in between.</li>
-    </ul>
+    <ol class="steps">
+      <li><span class="step-dot">1</span><div><strong>Choose an amount</strong><span class="desc">Any amount from ₹10 works. The presets are just a starting point.</span></div></li>
+      <li><span class="step-dot">2</span><div><strong>Pay with UPI</strong><span class="desc">Tap the button on your phone, or scan the code from another device.</span></div></li>
+      <li><span class="step-dot">3</span><div><strong>All done</strong><span class="desc">The money lands in my UPI account directly. No platform sits in between.</span></div></li>
+    </ol>
   </section>
+
+  <footer>☕ Brewed by Akash ;)</footer>
 </main>
-
-<footer class="wrap">
-  Payments go straight to my UPI account.
-</footer>
-
 <script src="script.js"></script>
 </body>
 </html>

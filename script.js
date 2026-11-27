@@ -47,7 +47,7 @@ function drawQR(link) {
 
 function render() {
   const value = Math.floor(Number(amt.value));
-  const valid = Number.isFinite(value) && value >= 1 && value <= 100000;
+  const valid = Number.isFinite(value) && value >= 10 && value <= 100000;
 
   document.querySelectorAll(".opt").forEach((b) => {
     b.setAttribute("aria-pressed", String(Number(b.dataset.amount) === value && amt.value !== ""));

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Buy me a chai</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="profile">
+  <div class="wrap">
+    <img class="mark" id="mark" src="avatar.jpg" alt="Akash">
+    <h1>Akash :)</h1>
+    <p class="role">Android Developer</p>
+    <p class="lede">I make things I wish already existed. If one of them helped you, a cup of chai keeps the next one coming.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="panel" aria-labelledby="donate-h">
+    <h2 id="donate-h">Buy me a chai</h2>
+
+    <div class="presets" id="presets" role="group" aria-label="Preset amounts"></div>
+
+    <label for="amt">Amount (₹)</label>
+    <input id="amt" type="number" min="1" step="1" inputmode="numeric">
+
+    <label for="donor">Your name (optional)</label>
+    <input id="donor" maxlength="40" placeholder="Anonymous" autocomplete="name">
+
+    <label for="msg">Note (optional)</label>
+    <textarea id="msg" rows="2" maxlength="80" placeholder="Say hi, or tell me what helped"></textarea>
+
+    <div class="qr"><div class="qrbox" id="qr">Loading code…</div></div>
+    <p class="hint">Scan with any UPI app, or tap Pay on your phone.</p>
+
+    <a class="btn" id="pay" href="#">Pay with UPI</a>
+    <button class="btn ghost" id="copy" type="button">Copy UPI ID</button>
+    <p class="hint">UPI ID: <span id="upi-id"></span></p>
+    <p class="hint" id="warn" hidden>Enter at least ₹1 to continue.</p>
+  </section>
+
+  <section class="how" aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <ul class="steps">
+      <li><strong>Choose an amount</strong>Any amount from ₹1 works. The presets are just a starting point.</li>
+      <li><strong>Pay with UPI</strong>Tap the button on your phone, or scan the code from another device.</li>
+      <li><strong>All done</strong>The money lands in my UPI account directly. No platform sits in between.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  Payments go straight to my UPI account.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
